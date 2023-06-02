@@ -8,13 +8,15 @@ export class ContactsService {
   constructor(private contactsRepository: ContactsRepository) {}
 
   async create(createContactDto: CreateContactDto) {
-    const contact = this.contactsRepository.create(createContactDto);
+    const userUUID = '';
+    const contact = this.contactsRepository.create(createContactDto, userUUID);
 
     return contact;
   }
 
-  async findAll() {
-    return await this.contactsRepository.findAll();
+  async findUserContacts() {
+    const userUUID = '';
+    return await this.contactsRepository.findUserContacts(userUUID);
   }
 
   async findOne(id: string) {
@@ -27,6 +29,6 @@ export class ContactsService {
 
   async remove(id: string) {
     await this.contactsRepository.delete(id);
-    return { message: 'Contact deleted'};
+    return { message: 'Contact deleted' };
   }
 }
