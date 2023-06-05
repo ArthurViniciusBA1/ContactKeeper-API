@@ -36,7 +36,13 @@ export class UsersService {
   }
 
   async findOneByEmail(email: string) {
-    return this.usersRepository.findOneByEmail(email);
+    const user = await this.usersRepository.findOneByEmail(email);
+
+    if (!user) {
+      throw new ConflictException('User not found');
+    }
+
+    return user;
   }
 
   async update(id: string, updateUserDto: UpdateUserDto) {
@@ -49,12 +55,15 @@ export class UsersService {
         throw new ConflictException('An user with this email already exists');
       }
     }
-    
+
+    if (Object.keys(updateUserDto).length === 0) {
+      throw new ConflictException('Nothing to update');
+    }
+
     return await this.usersRepository.update(id, updateUserDto);
   }
 
   async remove(id: string) {
     await this.usersRepository.delete(id);
-    return { message: 'User removed' };
   }
 }

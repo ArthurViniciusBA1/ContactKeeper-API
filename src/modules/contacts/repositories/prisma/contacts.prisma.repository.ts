@@ -12,7 +12,7 @@ export class ContactsPrismaRepository implements ContactsRepository {
 
   async create(data: CreateContactDto, userUUID: string): Promise<Contact> {
     const contact = new Contact();
-    Object.assign(Contact, { ...data });
+    Object.assign(contact, { ...data });
 
     const newContact = await this.prisma.contact.create({
       data: {

@@ -14,13 +14,7 @@ export class User {
   password: string;
 
   constructor() {
-    this.id = randomUUID();
     this.created_at = new Date().toISOString();
-    this.patched_at = new Date().toISOString();
-  }
-
-  update(patches: Partial<User>) {
-    Object.assign(this, patches);
     this.patched_at = new Date().toISOString();
   }
 }
