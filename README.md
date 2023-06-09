@@ -26,7 +26,7 @@ yarn
     <h2>
     Aplicar as migrações e gerar tabelas
     </h2>
-    <p>Para gerar as tabelas com o Prisma primeiro crie um arquivo .env e preencha com as informações da database e após utilize o comando abaixo:</p>
+    <p>Para gerar as tabelas com o Prisma primeiro crie um arquivo .env e preencha com as informações da database por fim utilize o comando abaixo:</p>
 </div>
 
 ```bash
