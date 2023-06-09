@@ -11,11 +11,10 @@
     <h2>
     Instalando as dependências
     </h2>
-    <p>Para inciar este projeto, é necessário instalar as dependências. Portanto você deve utilizar o comando abaixo para instalar as dependências:</p>
+    <p>Para iniciar este projeto, é necessário instalar as dependências. Utilize o comando abaixo para instalar as dependências:</p>
 </div>
 
 ```bash
-# instalando as dependências
 # caso use npm
 npm run i
 
@@ -42,7 +41,6 @@ npx prisma migrate dev
 </div>
 
 ```bash
-## rodando a aplicação localmente
 # caso use npm
 npm run start:dev
 
